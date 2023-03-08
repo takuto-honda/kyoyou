@@ -3,6 +3,7 @@
 @section('title', '投稿一覧')
 
 @section('content')
+@include('nav')
   <div class="container">
     @foreach($posts as $post)
       <div class="card mt-3">
