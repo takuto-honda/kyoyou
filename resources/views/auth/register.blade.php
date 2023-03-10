@@ -37,7 +37,7 @@
               </form>
 
               <div class="mt-0">
-                <a href="{{ route('login') }}" class="card-text">ログインはこちら</a>
+                <a href="{{ secure_url('login') }}" class="card-text">ログインはこちら</a>
               </div>
               
             </div>
