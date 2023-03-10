@@ -6,19 +6,19 @@
 
     @guest
     <li class="nav-item">
-    <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a>
+      <a class="nav-link" href="{{ secure_url('register') }}">ユーザー登録</a>
     </li>
     @endguest
 
     @guest
     <li class="nav-item">
-      <a class="nav-link" href="">ログイン</a>
+      <a class="nav-link" href="{{ secure_url('login') }}">ログイン</a>
     </li>
     @endguest
 
     @guest
     <li class="nav-item">
-      <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
+      <a class="nav-link" href="{{ secure_url('posts.create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a>
     </li>
     @endguest
 
@@ -40,7 +40,7 @@
         </button>
       </div>
     </li>
-    <form id="logout-button" method="POST" action="{{ route('logout') }}">
+    <form id="logout-button" method="POST" action="{{ secure_url('logout') }}">
       @csrf
     </form>
     <!-- Dropdown -->
