@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['web'])->group(function () {
+    Auth::routes();
 });
 
-
-Route::get('posts/index', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);

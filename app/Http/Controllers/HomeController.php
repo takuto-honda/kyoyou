@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,10 +15,14 @@ class PostController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
-        $posts = Post::orderByDesc('created_at');
-        return view('posts.index', compact('posts'));
+        return view('home');
     }
 }
